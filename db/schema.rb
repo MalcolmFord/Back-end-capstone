@@ -12,17 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20171201193133) do
 
-  create_table "Users", force: :cascade do |t|
-    t.string "First_name"
-    t.string "Last_name"
-    t.date "DOB"
-    t.string "email"
-    t.string "password"
-    t.string "Profile_photo_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "personal_comments", force: :cascade do |t|
     t.integer "Personal_post_id"
     t.integer "User_id"
@@ -77,6 +66,17 @@ ActiveRecord::Schema.define(version: 20171201193133) do
     t.datetime "updated_at", null: false
     t.index ["Technology_id"], name: "index_user_technologies_on_Technology_id"
     t.index ["User_id"], name: "index_user_technologies_on_User_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "First_name"
+    t.string "Last_name"
+    t.date "DOB"
+    t.string "email"
+    t.string "password_digest"
+    t.string "Profile_photo_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
