@@ -1,5 +1,5 @@
-class PersonalPost < ApplicationController
-  skip_before_action :authenticate_request, only: [:create]
+class PersonalPostsController < ApplicationController
+  # skip_before_action :authenticate_request, only: [:create]
   def index
     post = PersonalPost.order('created_at DESC')
     render json: {status: 'SUCCESS', message:'Loaded User', data:post}, status: :ok
@@ -31,7 +31,7 @@ class PersonalPost < ApplicationController
 
   private
   def post_params
-    params.permit(:Post)
+    params.permit(:User_id, :Post, :personal_posts)
   end
 
 end

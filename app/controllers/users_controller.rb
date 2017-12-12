@@ -1,4 +1,4 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
   skip_before_action :authenticate_request, only: [:create]
   def index
     user = User.order('created_at DESC')

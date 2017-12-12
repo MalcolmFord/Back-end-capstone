@@ -1,4 +1,4 @@
-class TechnologyController < ApplicationController
+class TechnologiesController < ApplicationController
     skip_before_action :authenticate_request, only: [:index, :create]
   def index
     technology = Technology.order('created_at DESC')
