@@ -1,11 +1,15 @@
 class PersonalPostsController < ApplicationController
-  # skip_before_action :authenticate_request, only: [:create]
+
+  skip_before_action :authenticate_request, only: [:create, :index]
+ 
   def index
-    post = PersonalPost.order('created_at DESC')
+    post = PersonalPost.where(User_id: params[:id])
+
+    # post = PersonalPost.find(params[:User_id])
     render json: {status: 'SUCCESS', message:'Loaded User', data:post}, status: :ok
   end
   def show
-    post = PersonalPost.find(params[:id])
+    post = PersonalPost.where(User_id: params[:id])
     render json: {status: 'SUCCESS', message:'Loaded User', data:post}, status: :ok
   end
   def create
