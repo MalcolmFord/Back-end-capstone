@@ -1,5 +1,5 @@
 class TechnologiesController < ApplicationController
-    skip_before_action :authenticate_request, only: [:index, :create]
+    skip_before_action :authenticate_request, only: [:index, :create, :show]
   def index
     technology = Technology.order('created_at DESC')
     render json: {status: 'SUCCESS', message:'Loaded User', data:technology}, status: :ok
