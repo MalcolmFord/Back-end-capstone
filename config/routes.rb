@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :user_technologies
     resources :technologies do
       resources :technology_posts
+      resources :messageboards
     end
     resources :technology_post_comments
     

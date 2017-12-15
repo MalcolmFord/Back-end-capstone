@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171201193133) do
+ActiveRecord::Schema.define(version: 20171215051558) do
+
+  create_table "messageboards", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "technology_id"
+    t.string "post"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["technology_id"], name: "index_messageboards_on_technology_id"
+    t.index ["user_id"], name: "index_messageboards_on_user_id"
+  end
 
   create_table "personal_comments", force: :cascade do |t|
     t.integer "Personal_post_id"
