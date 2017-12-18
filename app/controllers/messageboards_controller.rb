@@ -3,13 +3,13 @@ class MessageboardsController < ApplicationController
   # skip_before_action :authenticate_request, only: [:create, :index]
  
   def index
-    message = Messageboard.where(technology_id: params[:id])
+    message = Messageboard.where(Technology_id: params[:id])
 
     # post = PersonalPost.find(params[:User_id])
     render json: {status: 'SUCCESS', message:'Loaded messages', data:message}, status: :ok
   end
   def show
-    message = Messageboard.where(tehcnology_id: params[:id])
+    message = Messageboard.find(Tehcnology_id: params[:id])
     render json: {status: 'SUCCESS', message:'Loaded messages', data:message}, status: :ok
   end
   def create
@@ -35,7 +35,7 @@ class MessageboardsController < ApplicationController
 
   private
   def message_params
-    params.permit(:user_id, :technology_id, :post)
+    params.permit(:User_id, :Technology_id, :post)
   end
 
 end
