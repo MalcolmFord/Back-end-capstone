@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: codemunity
+  api_key: '631923789456471'
+  api_secret: RRjMIuctafKwafpUsAiMcWKuiHU
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: codemunity
+  api_key: '631923789456471'
+  api_secret: RRjMIuctafKwafpUsAiMcWKuiHU
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: codemunity
+  api_key: '631923789456471'
+  api_secret: RRjMIuctafKwafpUsAiMcWKuiHU
+  enhance_image_tag: true
+  static_image_support: false

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171215051558) do
+ActiveRecord::Schema.define(version: 20171220170018) do
 
   create_table "messageboards", force: :cascade do |t|
     t.integer "User_id"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20171215051558) do
     t.text "Description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo_url"
     t.index ["User_id"], name: "index_technologies_on_User_id"
   end
 
