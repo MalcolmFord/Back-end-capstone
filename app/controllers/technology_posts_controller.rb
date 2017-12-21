@@ -1,5 +1,5 @@
 class TechnologyPostsController < ApplicationController
-    skip_before_action :authenticate_request, only: [:index, :show, :create]
+    skip_before_action :authenticate_request, only: [:index, :show, :create, :update]
   def index
     technology_post = TechnologyPost.where(Technology_id: params[:id])
     render json: {status: 'SUCCESS', message:'Loaded User', data:technology_post}, status: :ok
@@ -19,7 +19,7 @@ class TechnologyPostsController < ApplicationController
   def update
     technology_post = TechnologyPost.find(params[:id])
     if
-    technology_post.update_attributes(technology_params)
+    technology_post.update_attributes(technology_post_params)
      render json: {status: 'SUCCESS', message:'technology post updated', data:technology_post}, status: :ok
     else
       render json: {status: 'ERROR', message:'technology post updated', data:technology_post.errors}, status: :unprocessable_entity
