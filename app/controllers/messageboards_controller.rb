@@ -1,4 +1,4 @@
-class MessageboardsController < ApplicationController
+                          class MessageboardsController < ApplicationController
 
   # skip_before_action :authenticate_request, only: [:create, :index]
  
