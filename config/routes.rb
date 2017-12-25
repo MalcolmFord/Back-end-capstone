@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       resources :messageboards
     end
     resources :technology_post_comments
+    resources :upcoming_events
     
 
      post 'authenticate', to: 'authentication#authenticate'

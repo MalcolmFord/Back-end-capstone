@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171220170018) do
+ActiveRecord::Schema.define(version: 20171221184139) do
 
   create_table "messageboards", force: :cascade do |t|
     t.integer "User_id"
@@ -68,6 +68,19 @@ ActiveRecord::Schema.define(version: 20171220170018) do
     t.datetime "updated_at", null: false
     t.index ["Technology_id"], name: "index_technology_posts_on_Technology_id"
     t.index ["User_id"], name: "index_technology_posts_on_User_id"
+  end
+
+  create_table "upcoming_events", force: :cascade do |t|
+    t.integer "User_id"
+    t.integer "Technology_id"
+    t.string "post"
+    t.date "date"
+    t.string "location"
+    t.time "time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["Technology_id"], name: "index_upcoming_events_on_Technology_id"
+    t.index ["User_id"], name: "index_upcoming_events_on_User_id"
   end
 
   create_table "user_technologies", force: :cascade do |t|
