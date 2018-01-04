@@ -23,4 +23,10 @@ class PersonalCommentsController < ApplicationController
     comment = PersonalComment.find(params [:id])
     render json: {status: 'SUCCESS', message:'Comment updated', data:comment}, status: :ok
   end
+
+  private
+
+  def comment_params
+    params.permit(:Personal_post_id, :User_id, :Comment)
+  end
 end
