@@ -12,7 +12,7 @@ class PersonalCommentsController < ApplicationController
     end
   end
   def show
-    comment = PersonalComment.where(Technology_id: params[:id])
+    comment = PersonalComment.where(Personal_post_id: params[:id])
     render json: {status: 'SUCCESS', message:'Comment/s shown', data:comment}, status: :ok
   end
   def update

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     end
     resources :technology_post_comments
     resources :upcoming_events
+    resources :attending_events
     
 
      post 'authenticate', to: 'authentication#authenticate'
