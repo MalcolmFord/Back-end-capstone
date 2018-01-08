@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180105214303) do
+ActiveRecord::Schema.define(version: 20180106173200) do
 
   create_table "attending_events", force: :cascade do |t|
     t.integer "User_id"
@@ -19,6 +19,14 @@ ActiveRecord::Schema.define(version: 20180105214303) do
     t.datetime "updated_at", null: false
     t.index ["Upcoming_event_id"], name: "index_attending_events_on_Upcoming_event_id"
     t.index ["User_id"], name: "index_attending_events_on_User_id"
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.string "filename"
+    t.string "content_type"
+    t.binary "file_contents"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "messageboards", force: :cascade do |t|
