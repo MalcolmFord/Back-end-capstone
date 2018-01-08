@@ -4,7 +4,7 @@ class AttendingEventsController < ApplicationController
     render json: {status: 'SUCCESS', message:'All attending events', data:attending}, status: :ok
   end
   def show
-    attending = AttendingEvent.joins("INNER JOIN upcoming_events ON attending_events.Upcoming_event_id = upcoming_events.id")
+    attending = @current_user.Upcoming_events
     render json: {status: 'SUCCESS', message:'All personal attending events', data:attending}, status: :ok
   end
   def create
