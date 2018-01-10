@@ -32,6 +32,6 @@ class TechnologiesController < ApplicationController
   end
   private
   def technology_params
-    params.permit(:User_id ,:Name, :Description)
+    params.permit(:User_id ,:Name, :Description, :photo_url)
   end
 end

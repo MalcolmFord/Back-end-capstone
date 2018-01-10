@@ -3,4 +3,5 @@ class User < ApplicationRecord
   has_many :personal_posts
   has_many :Attending_events
   has_many :Upcoming_events, through: :Attending_events
+  has_many :Join_technologies
 end
